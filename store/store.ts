@@ -1,12 +1,14 @@
 import {create} from 'zustand';
 
 interface IStore {
-  difficulty: 1 | 2 | 3,
-  setDifficulty: (state: 1 | 2 | 3) => void,
+  tasks: object[];
+  newTask: (value: object) => void;
+  deleteTask: (index: number) => void;
 }
 const useStore = create<IStore>((set) => ({
-  difficulty: 1,
-  setDifficulty: (value: 1 | 2 | 3) => set((state) => ({ difficulty: value }))
+  tasks: [],
+  newTask: (value: object) => set((state) => ({ tasks: [...state.tasks, value] })),
+  deleteTask: (index: number) => set((state) => ({ tasks: state.tasks.filter((task, ind) => {return ind !== index}) })),
 }));
 
 export default useStore;

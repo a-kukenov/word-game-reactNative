@@ -8,15 +8,14 @@ export function CustomInput(props: TextInputProps, name: string) {
 				{
 					fontFamily: 'Nunito_800ExtraBold',
 					borderRadius: 10,
-					borderWidth: 4,
-					borderColor: 'orange',
-					color: 'white',
-					height: '100%',
-					width: '15%',
-					fontSize: 35,
+					backgroundColor: 'orange',
+					color: 'rgb(29, 29, 29)',
+					height: 60,
+					width: 400,
+					fontSize: 19,
 					textAlign: 'center',
 					justifyContent: 'center',
-					alignItems: 'center',
+					alignItems: 'center'
 				},
 				props.style
 			]}
